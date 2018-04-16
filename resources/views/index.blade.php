@@ -43,6 +43,24 @@
                     <input class="input" type="tel" name="telephone" value="{{ old('telephone') }}">
                 </div>
             </div>
+
+            <div class="field">
+                <div class="file has-name is-boxed">
+                  <label class="file-label">
+                    <input class="file-input" type="file" name="resume" id="file">
+                    <span class="file-cta">
+                      <span class="file-icon">
+                        <i class="fas fa-upload"></i>
+                      </span>
+                      <span class="file-label">
+                        Choose a file…
+                      </span>
+                    </span>
+                    <span class="file-name" id="filename"></span>
+                  </label>
+                </div>
+            </div>
+
             <div class="field">
                 <div class="g-recaptcha" data-sitekey="6LdoZ1MUAAAAABeYf0tbVhAAGYSmvTnPjXXFJm0y"></div>
             </div>
