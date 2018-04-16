@@ -36,7 +36,6 @@ class EntriesController extends Controller
      */
     public function store(Entry $entry, StoreEntries $request)
     {
-        dd($request->all());
         $entry->createEntry();
         return back();
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\Recaptcha;
 
 class StoreEntries extends FormRequest
 {
@@ -21,13 +22,14 @@ class StoreEntries extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(Recaptcha $recaptcha)
     {
         return [
             'firstname' => 'required',
             'lastname' => 'required',
             'email' => 'required|email',
             'telephone' => 'required|digits:10',
+            'g-recaptcha-response' => ['required', $recaptcha]
         ];
     }
 }

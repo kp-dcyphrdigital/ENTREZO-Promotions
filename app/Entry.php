@@ -10,6 +10,11 @@ class Entry extends Model
     
     public function createEntry()
     {
-    	$this->create(request()->all());
+    	$this->create([
+			'firstname' => request('firstname'),
+			'lastname' => request('lastname'),
+			'email' => request('email'),
+			'telephone' => request('telephone'),
+    	]);
     }
 }

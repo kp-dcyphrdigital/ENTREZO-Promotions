@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="field">
-                <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+                <div class="g-recaptcha" data-sitekey="6LdoZ1MUAAAAABeYf0tbVhAAGYSmvTnPjXXFJm0y"></div>
             </div>
             <div class="field">
                 <div class="control">
