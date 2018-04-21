@@ -19,6 +19,7 @@ class CreateEntriesTable extends Migration
             $table->string('lastname');
             $table->string('email');
             $table->string('telephone');
+            $table->string('url');
             $table->timestamps();
         });
     }

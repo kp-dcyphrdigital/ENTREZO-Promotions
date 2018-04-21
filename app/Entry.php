@@ -15,6 +15,7 @@ class Entry extends Model
 			'lastname' => request('lastname'),
 			'email' => request('email'),
 			'telephone' => request('telephone'),
+            'url' => request()->file('resume')->store('resumes'),            
     	]);
     }
 }

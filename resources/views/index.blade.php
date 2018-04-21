@@ -13,7 +13,7 @@
     @endif
 
     <section class="section">
-        <form method="post" action="/">
+        <form method="post" action="/" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="field">
                 <label class="label">First Name</label>
