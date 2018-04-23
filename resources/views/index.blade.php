@@ -1,74 +1,32 @@
 @extends('layouts.master')
-@section('title', 'ENTREZO Promotions')
+@section('title', 'ENTREZO Promotions : Home')
 @section('content')
-    
-    @if (count($errors))
-    <div class="alert alert-danger">
-      <ul>
-          @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-          @endforeach
-      </ul>
-    </div>
-    @endif
-
     <section class="section">
-        <form method="post" action="/" enctype="multipart/form-data">
-            {{ csrf_field() }}
-            <div class="field">
-                <label class="label">First Name</label>
-                <div class="control">
-                    <input class="input" type="text" name="firstname" value="{{ old('firstname') }}">
+      <h1 class="title is-3">Recent Entries</h1>
+      @foreach ($entries as $entry)
+        @if ($loop->iteration == 1 || ($loop->iteration - 1)  % 3 == 0)
+        <div class="columns">
+        @endif
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="images/{{ $entry->url }}" alt="">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">{{ $entry->firstname }} {{ $entry->lastname }}</p>
+                    <p class="subtitle is-6">{{ $entry->created_at->diffForHumans() }}</p>
+                  </div>
                 </div>
-                {{ $errors->first('firstname') }}
+              </div>
             </div>
-            <div class="field">
-                <label class="label">Last Name</label>
-                <div class="control">
-                    <input class="input" type="text" name="lastname" value="{{ old('lastname') }}">
-                </div>
-            </div>
-            <div class="field">
-                <label class="label">Email</label>
-                <div class="control has-icons-left">
-                    <input class="input" type="email" name="email" value="{{ old('email') }}">
-                    <span class="icon is-small is-left">
-                        <i class="fas fa-envelope"></i>
-                    </span>
-                </div>
-            </div>
-            <div class="field">
-                <label class="label">Telephone</label>
-                <div class="control">
-                    <input class="input" type="tel" name="telephone" value="{{ old('telephone') }}">
-                </div>
-            </div>
-
-            <div class="field">
-                <div class="file has-name is-boxed">
-                  <label class="file-label">
-                    <input class="file-input" type="file" name="resume" id="file">
-                    <span class="file-cta">
-                      <span class="file-icon">
-                        <i class="fas fa-upload"></i>
-                      </span>
-                      <span class="file-label">
-                        Choose a file…
-                      </span>
-                    </span>
-                    <span class="file-name" id="filename"></span>
-                  </label>
-                </div>
-            </div>
-
-            <div class="field">
-                <div class="g-recaptcha" data-sitekey="6LdoZ1MUAAAAABeYf0tbVhAAGYSmvTnPjXXFJm0y"></div>
-            </div>
-            <div class="field">
-                <div class="control">
-                    <button class="button is-primary">Submit</button>
-                </div>
-            </div>
-        </form>
+          </div>
+       @if ($loop->iteration % 3 == 0)
+        </div>
+        @endif
+      @endforeach
     </section>
 @endsection

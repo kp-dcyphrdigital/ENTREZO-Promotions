@@ -1,5 +1,6 @@
 @include('layouts.header')
 @include('layouts.nav')
+@include('layouts.banner')
 <div class="container">
 	<div class="columns">
 		<div class="column is-two-thirds">

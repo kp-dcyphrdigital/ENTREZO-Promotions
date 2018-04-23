@@ -21,3 +21,21 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Competition::class, function (Faker $faker) {
+    return [
+        'name' => $faker->sentence,
+    ];
+});
+
+$factory->define(App\Entry::class, function (Faker $faker) {
+    $gender = rand(0 , 1) ? "Female" : "Male";
+    return [
+		'firstname' => $faker->firstname(strtolower($gender)),
+		'lastname' => $faker->lastname,
+		'email' => $faker->email,
+		'telephone' => '04' . $faker->randomNumber(8),
+        'gender' => $gender,
+		'url' => $faker->image($dir = '/Users/kp/Projects/learning/entrezopromotions/storage/app/public/images', $width = 320, $height = 240, '', false),
+    ];
+});

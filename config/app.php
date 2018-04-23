@@ -13,7 +13,8 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'ENTREZO Promotions'),
+    'entrezo_curr_comp_id' => env('ENTREZO_CURR_COMP_ID'),
 
     /*
     |--------------------------------------------------------------------------

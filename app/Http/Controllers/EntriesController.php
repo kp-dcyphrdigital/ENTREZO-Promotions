@@ -15,7 +15,8 @@ class EntriesController extends Controller
      */
     public function index()
     {
-        
+        $entries = Entry::latest()->get();
+        return view( 'index', compact('entries') );        
     }
 
     /**
@@ -25,7 +26,7 @@ class EntriesController extends Controller
      */
     public function create()
     {
-        return view('index');
+        return view('create');
     }
 
     /**

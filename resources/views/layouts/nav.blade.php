@@ -1,4 +1,4 @@
-<nav class="navbar is-info">
+<nav class="navbar is-light">
   <div class="navbar-brand">
     <a class="navbar-item" href="https://syginteractive.com">ENTREZO Promotions</a>
     <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
@@ -10,29 +10,31 @@
 
   <div id="navbarExampleTransparentExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item is-active" href="#">Home</a>
-      <a class="navbar-item" href="#">FAQs</a>
+      <a class="navbar-item @if ( Request::is('/') ) is-active @endif" href="/">Home</a>
+      <a class="navbar-item @if ( Request::is('*enter*') ) is-active @endif" href="/enter">Enter Now</a>
+      <a class="navbar-item @if ( Request::is('*faqs*') ) is-active @endif" href="/faqs">FAQs</a>
+      <a class="navbar-item @if ( Request::is('*terms*') ) is-active @endif" href="/terms">Terms and Conditions</a>
     </div>
 
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="field is-grouped">
           <p class="control">
-            <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://localhost:4000" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=http://localhost:4000&amp;via=jgthms">
+            <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="" target="_blank" href="">
               <span class="icon">
                 <i class="fab fa-twitter"></i>
               </span>
               <span>
-                Tweet
+                Twitter
               </span>
             </a>
           </p>
           <p class="control">
-            <a class="button is-primary" href="https://github.com/jgthms/bulma/releases/download/0.7.0/bulma-0.7.0.zip">
+            <a class="button bd-fb-button" href="">
               <span class="icon">
-                <i class="fas fa-download"></i>
+                <i class="fab fa-facebook"></i>
               </span>
-              <span>Download</span>
+              <span>Facebook</span>
             </a>
           </p>
         </div>

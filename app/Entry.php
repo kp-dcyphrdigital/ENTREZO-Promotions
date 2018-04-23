@@ -7,15 +7,24 @@ use Illuminate\Database\Eloquent\Model;
 class Entry extends Model
 {
     protected $guarded = [];
-    
+
+    public function competition()
+    {
+        return $this->belongsTo(Competition::class);
+    }
+
     public function createEntry()
     {
-    	$this->create([
-			'firstname' => request('firstname'),
+    	$photoname = request()->file('photo')->store('public/images');
+        $photoname = str_replace('public/images', '', $photoname);
+        $this->create([
+			'competition_id' => config('app.entrezo_curr_comp_id'),
+            'firstname' => request('firstname'),
 			'lastname' => request('lastname'),
 			'email' => request('email'),
 			'telephone' => request('telephone'),
-            'url' => request()->file('resume')->store('resumes'),            
+            'gender' => request('gender'),
+            'url' => $photoname,            
     	]);
     }
 }

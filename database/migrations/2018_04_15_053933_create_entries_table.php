@@ -15,10 +15,12 @@ class CreateEntriesTable extends Migration
     {
         Schema::create('entries', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('competition_id');
             $table->string('firstname');
             $table->string('lastname');
             $table->string('email');
             $table->string('telephone');
+            $table->string('gender');
             $table->string('url');
             $table->timestamps();
         });
@@ -32,5 +34,7 @@ class CreateEntriesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('entries');
+        // unlink('4d39d12b63a6c86dbec91c6f9b995400.jpg');
+        array_map('unlink', glob("/Users/kp/Projects/learning/entrezopromotions/storage/app/public/images/*.*"));
     }
 }
