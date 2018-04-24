@@ -20,6 +20,18 @@
           </div>
         </article>
 
+        @else
+
+        <article class="message is-warning">
+          <div class="message-header">
+            <p>Before you enter</p>
+            <!-- <button class="delete" aria-label="delete"></button> -->
+          </div>
+          <div class="message-body">
+            Please note that you can only upload image filetypes and the filesize needs to be less than 200 KB. If you resize your image to 640px X 480px using any photo editing software that should get the image size down to less than 200 KB. Winners will need to provide a high-res version of their photo.
+          </div>
+        </article>
+
         @endif
 
         <form method="post" action="/" enctype="multipart/form-data">

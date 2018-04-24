@@ -30,7 +30,7 @@ class StoreEntries extends FormRequest
             'email' => 'required|email',
             'telephone' => 'required|digits:10',
             'gender' => 'required|in:Female,Male',
-            'photo' => 'image|max:100',
+            'photo' => 'image|max:200',
             'g-recaptcha-response' => ['required', $recaptcha]
         ];
     }
