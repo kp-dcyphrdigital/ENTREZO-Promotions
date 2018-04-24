@@ -1,10 +1,10 @@
-<section class="section">
+<section class="section" id="ep-sidebar">
 	<div class="card">
 	  <div class="card-content">
 	    <p class="title is-4">
 	      Functionality
 	    </p>
-	    <p style="margin-bottom: .5rem;">
+	    <p>
 	      Microsite design is fully customisable and responsive.
 	  </p>
 		<p>
