@@ -53,6 +53,9 @@
 	      Other Features
 	    </p>
 	    <p>
+	    	Can be deployed on any leading cloud hosting platform and therefore is scalable in realtime to handle traffic surges.
+	  	</p>
+	    <p>
 	      Server level caching for fast responses, page requests that can be served from the cache do not even hit the application layer.
 	  	</p>
 	  </div>

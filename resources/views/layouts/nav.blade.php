@@ -1,6 +1,6 @@
 <nav class="navbar is-light">
   <div class="navbar-brand">
-    <a class="navbar-item" href="//syginteractive.com.au">ENTREZO Promotions</a>
+    <a class="navbar-item" href="http://syginteractive.com.au">ENTREZO Promotions</a>
     <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
       <span></span>
       <span></span>
