@@ -1,7 +1,8 @@
 <nav class="navbar is-light">
   <div class="navbar-brand">
-    <a class="navbar-item" href="https://syginteractive.com">ENTREZO Promotions</a>
+    <a class="navbar-item" href="//syginteractive.com">ENTREZO Promotions</a>
     <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+      <span></span>
       <span></span>
       <span></span>
       <span></span>
