@@ -20,3 +20,7 @@
 .hero.is-info.is-bold {
   background-image: url("../imgs/bg.jpeg");
 }
+
+.hero.is-info {
+  background-color: #ACBF9C;
+}
