@@ -1,3 +1,4 @@
+@if ( ! Request::is('*enter*') )
 <a href="/enter"><section class="hero is-medium is-info is-bold">
   <div class="hero-body">
     <div class="container">
@@ -10,3 +11,4 @@
     </div>
   </div>
 </section></a>
+@endif
