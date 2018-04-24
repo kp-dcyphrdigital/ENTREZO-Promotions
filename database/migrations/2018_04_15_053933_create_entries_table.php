@@ -35,6 +35,6 @@ class CreateEntriesTable extends Migration
     {
         Schema::dropIfExists('entries');
         // unlink('4d39d12b63a6c86dbec91c6f9b995400.jpg');
-        array_map('unlink', glob("/Users/kp/Projects/learning/entrezopromotions/storage/app/public/images/*.*"));
+        array_map('unlink', glob( base_path() . "/storage/app/public/images/*.*"));
     }
 }

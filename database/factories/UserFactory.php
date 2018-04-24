@@ -36,6 +36,6 @@ $factory->define(App\Entry::class, function (Faker $faker) {
 		'email' => $faker->email,
 		'telephone' => '04' . $faker->randomNumber(8),
         'gender' => $gender,
-		'url' => $faker->image($dir = '/Users/kp/Projects/learning/entrezopromotions/storage/app/public/images', $width = 320, $height = 240, '', false),
+		'url' => $faker->image($dir = base_path() . '/storage/app/public/images', $width = 320, $height = 240, '', false),
     ];
 });
