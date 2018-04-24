@@ -8,7 +8,7 @@
 	      Microsite design is fully customisable and responsive.
 	  </p>
 		<p>
-	      Entries can be displayed immediately or on approval. 
+	      Entries can be displayed immediately or on approval. The number displayed and the selection criteria is configurable.
 	    </p>
 		<p>
 	      Images can be restricted by size, dimensions and type.

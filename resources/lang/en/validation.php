@@ -101,8 +101,8 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'g-recaptcha-response' => [
+            'required' => 'You have to tick the Google reCAPTCHA checkbox',
         ],
     ],
 
