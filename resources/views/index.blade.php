@@ -2,6 +2,19 @@
 @section('title', 'ENTREZO Promotions : Home')
 @section('content')
     <section class="section">
+
+      @if ( session('entrystatus') == "success" )
+      <article class="message is-success">
+        <div class="message-header">
+          <p>You have successfully entered the competition!</p>
+          <!-- <button class="delete" aria-label="delete"></button> -->
+        </div>
+        <div class="message-body">
+          Check out a random selection of the most recent entries below!
+        </div>
+      </article>
+      @endif
+      
       <h1 class="title is-3">Recent Entries</h1>
       @foreach ($entries as $entry)
         @if ($loop->iteration == 1 || ($loop->iteration - 1)  % 3 == 0)

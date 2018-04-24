@@ -38,7 +38,8 @@ class EntriesController extends Controller
     public function store(Entry $entry, StoreEntries $request)
     {
         $entry->createEntry();
-        return back();
+        request()->session()->flash('entrystatus', 'success');
+        return redirect('/');
     }
 
     /**

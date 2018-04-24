@@ -16,7 +16,7 @@ class Entry extends Model
     public function createEntry()
     {
     	$photoname = request()->file('photo')->store('public/images');
-        $photoname = str_replace('public/images', '', $photoname);
+        $photoname = str_replace('public/images/', '', $photoname);
         $this->create([
 			'competition_id' => config('app.entrezo_curr_comp_id'),
             'firstname' => request('firstname'),
