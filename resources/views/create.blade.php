@@ -49,7 +49,7 @@
             <div class="field">
                 <label class="label">Telephone</label>
                 <div class="control">
-                    <input class="input" type="tel" name="telephone" value="{{ old('telephone') }}" required>
+                    <input class="input" type="tel" name="telephone" value="{{ old('telephone') }}" required placeholder="10 digit format e.g. 0411222333 or 0340008000">
                 </div>
             </div>
 
