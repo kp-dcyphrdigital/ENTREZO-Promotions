@@ -15,7 +15,7 @@ class EntriesController extends Controller
      */
     public function index()
     {
-        $entries = Entry::latest()->get();
+        $entries = Entry::inRandomOrder()->take(18)->get();
         return view( 'index', compact('entries') );        
     }
 
