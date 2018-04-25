@@ -5,10 +5,10 @@
 	      Functionality
 	    </p>
 	    <p>
-	      Microsite design is fully customisable and responsive.
+	      The microsite design is fully customisable and responsive.
 	  </p>
 	    <p>
-	      The fields on the Entry Form are fully configurable depending on client requirements.
+	      The number and type of fields on the entry form are configurable depending on client requirements.
 	  </p>
 		<p>
 	      Entries can be displayed immediately or on approval. The number displayed and the selection criteria is configurable.
@@ -36,8 +36,12 @@
 	    <p class="title is-4">
 	      Security
 	    </p>
-	    <p class="">
-	      Built-in CSRF protection.</p>
+	    <p>
+	      Independent Penetration Testing Report will be provided.
+	  	</p>
+	    <p>
+	      Built-in CSRF protection.
+	  	</p>
 		<p>
 	      Rate throttling to block automated submissions.
 	    </p>
