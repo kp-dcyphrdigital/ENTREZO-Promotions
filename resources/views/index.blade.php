@@ -30,8 +30,8 @@
               <div class="card-content">
                 <div class="media">
                   <div class="media-content">
-                    <p class="title is-4">{{ $entry->firstname }} {{ $entry->lastname }}</p>
-                    <p class="subtitle is-6">{{ $entry->created_at->diffForHumans() }}</p>
+                    <p class="title is-6">{{ $entry->firstname }} {{ $entry->lastname }}</p>
+                    <p class="subtitle is-7">{{ $entry->created_at->diffForHumans() }}</p>
                   </div>
                 </div>
               </div>
