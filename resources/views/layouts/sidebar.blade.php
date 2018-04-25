@@ -7,6 +7,9 @@
 	    <p>
 	      Microsite design is fully customisable and responsive.
 	  </p>
+	    <p>
+	      The fields on the Entry Form are fully configurable depending on client requirements.
+	  </p>
 		<p>
 	      Entries can be displayed immediately or on approval. The number displayed and the selection criteria is configurable.
 	    </p>
