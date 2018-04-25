@@ -1,5 +1,5 @@
 @if ( ! Request::is('*enter*') )
-<a href="/enter"><section class="hero is-medium is-info is-bold">
+<a href="/enter"><section class="hero is-medium is-light">
   <div class="hero-body">
     <div class="container">
       <h1 class="title">

@@ -17,10 +17,11 @@
   margin-bottom: 0.5rem;
 }
 
-.hero.is-info.is-bold {
+.hero.is-light {
   background-image: url("../imgs/bg.jpeg");
+  background-color: #ACBF9C;
 }
 
-.hero.is-info {
-  background-color: #ACBF9C;
+.hero.is-light .title, .hero.is-light .subtitle {
+  color: rgba(255, 255, 255, 0.9);
 }
