@@ -66,7 +66,7 @@
             </div>
 
             <div class="field">
-                <div class="select is-rounded">
+                <div class="select">
                   <select name="gender" required>
                     <option value="">Gender?</option>
                     <option value="Female">Female</option>
@@ -76,7 +76,7 @@
             </div>
 
             <div class="field">
-                <div class="file has-name is-boxed">
+                <div class="file has-name is-boxed is-warning">
                   <label class="file-label">
                     <input class="file-input" type="file" name="photo" id="file" accept="image/*" required>
                     <span class="file-cta">
@@ -84,7 +84,7 @@
                         <i class="fas fa-upload"></i>
                       </span>
                       <span class="file-label">
-                        Choose a file…
+                        Upload a photo...
                       </span>
                     </span>
                     <span class="file-name" id="filename"></span>
@@ -98,7 +98,7 @@
 
             <div class="field">
                 <div class="control">
-                    <button class="button is-primary">Submit</button>
+                    <button class="button is-info is-medium">Submit</button>
                 </div>
             </div>
         </form>
