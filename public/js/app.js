@@ -65,6 +65,13 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/bulma/bulma.sass":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/assets/js/app.js":
 /***/ (function(module, exports) {
 
@@ -122,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__("./resources/assets/js/app.js");
+__webpack_require__("./node_modules/bulma/bulma.sass");
 module.exports = __webpack_require__("./resources/assets/sass/app.scss");
 
 

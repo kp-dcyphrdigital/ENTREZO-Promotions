@@ -12,6 +12,7 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
+	.sass('node_modules/bulma/bulma.sass', 'public/css')
 	.sass('resources/assets/sass/app.scss', 'public/css')
 		.options({
         	processCssUrls: false
