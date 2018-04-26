@@ -34,7 +34,7 @@ class AdminEntriesController extends Controller
         $entries = Entry::latest()
             ->where('competition_id', '=', 1)
             ->filter(request(['s']))
-            ->get();
+            ->paginate(20);
         return view( 'admin.entries', compact('entries') );
     }
 

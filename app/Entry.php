@@ -16,8 +16,6 @@ class Entry extends Model
         return $this->belongsTo(Competition::class);
     }
 
-
-
     public function createEntry()
     {
     	$photoname = request()->file('photo')->store('public/images');

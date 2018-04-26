@@ -34,8 +34,10 @@ $factory->define(App\Entry::class, function (Faker $faker) {
 		'firstname' => $faker->firstname(strtolower($gender)),
 		'lastname' => $faker->lastname,
 		'email' => $faker->email,
-		'telephone' => '04' . $faker->randomNumber(8),
+		'telephone' => '04' . $faker->randomNumber(8, true),
         'gender' => $gender,
 		'url' => $faker->image($dir = base_path() . '/storage/app/public/images', $width = 320, $height = 240, '', false),
+        'approved' => rand(0, 1),
+        'created_at' => $faker->dateTimeBetween('-2 days', 'now', 'Australia/Sydney'),
     ];
 });

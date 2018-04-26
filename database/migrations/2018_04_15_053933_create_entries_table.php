@@ -22,6 +22,7 @@ class CreateEntriesTable extends Migration
             $table->string('telephone');
             $table->string('gender');
             $table->string('url');
+            $table->boolean('approved')->default(false);
             $table->timestamps();
         });
     }
