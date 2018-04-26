@@ -3,15 +3,20 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
+use Carbon\Carbon;
 
 class Entry extends Model
 {
     protected $guarded = [];
+    protected $entriescounts;
 
     public function competition()
     {
         return $this->belongsTo(Competition::class);
     }
+
+
 
     public function createEntry()
     {
@@ -27,4 +32,30 @@ class Entry extends Model
             'url' => $photoname,            
     	]);
     }
+
+    public function getDashboardCounts($competition = 1)
+    {
+            $entriescounts['today'] = $this->where('competition_id', '=', $competition)->where('created_at', '>', Carbon::today())->count();
+
+            $entriescounts['yesterday'] = Cache::remember('archives', 60, function() use ($competition) { 
+                return $this->where('competition_id', '=', $competition)->whereBetween( 'created_at', [ Carbon::yesterday(), Carbon::today() ] )->count();
+            });
+            
+            $entriescounts['alltime'] = $this->where('competition_id', '=', $competition)->count();
+
+            return $entriescounts;
+
+    }
+
+    public function scopeFilter($query, $filters)
+    {
+        if ( @$filters['s'] == 'today') {
+            $query->where( 'created_at', '>', Carbon::today() );
+        }
+        
+        if ( @$filters['s'] == 'yesterday') {
+            $query->whereBetween( 'created_at', [ Carbon::yesterday(), Carbon::today() ] );
+        }
+    }
+
 }
