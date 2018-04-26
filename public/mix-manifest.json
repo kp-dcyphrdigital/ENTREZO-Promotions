@@ -1,5 +1,7 @@
 {
-    "/js/app.js": "/js/app.js?id=7ec17138dbc1f9b8e911",
+    "/js/admin.js": "/js/admin.js?id=91f4dd4b69fe84d3484b",
+    "/js/app.js": "/js/app.js?id=8dbbe6a75a7ba75d0d22",
     "/css/bulma.css": "/css/bulma.css?id=f68a4f4562594a4d31da",
-    "/css/app.css": "/css/app.css?id=45e75a92738fb1b4adbd"
+    "/css/app.css": "/css/app.css?id=0a9dadfe074c42f6ead1",
+    "/css/admin.css": "/css/admin.css?id=ba1ae1ecb91c9cfb1347"
 }

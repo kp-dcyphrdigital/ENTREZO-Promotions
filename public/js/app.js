@@ -75,14 +75,6 @@
 /***/ "./resources/assets/js/app.js":
 /***/ (function(module, exports) {
 
-/*require('./bootstrap');
-window.Vue = require('vue');
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
-const app = new Vue({
-    el: '#app'
-});*/
-
 var file = document.getElementById("file");
 if (file) {
   file.onchange = function () {
@@ -118,6 +110,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /***/ }),
 
+/***/ "./resources/assets/sass/admin.sass":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/assets/sass/app.scss":
 /***/ (function(module, exports) {
 
@@ -130,7 +129,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 __webpack_require__("./resources/assets/js/app.js");
 __webpack_require__("./node_modules/bulma/bulma.sass");
-module.exports = __webpack_require__("./resources/assets/sass/app.scss");
+__webpack_require__("./resources/assets/sass/app.scss");
+module.exports = __webpack_require__("./resources/assets/sass/admin.sass");
 
 
 /***/ })
