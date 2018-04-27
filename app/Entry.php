@@ -31,7 +31,7 @@ class Entry extends Model
     	]);
     }
 
-    public function getDashboardCounts($competition = 1)
+    public function getDashboardCounts($competition)
     {
             $entriescounts['unapproved'] = $this->where('competition_id', '=', $competition)->where('approved', '=', 0)->count();
 

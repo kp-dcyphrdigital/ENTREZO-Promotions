@@ -31,4 +31,4 @@ Route::get('admin/home', 'Admin\AdminEntriesController@dashboard')->name('home')
 
 Route::get('admin/entries/{competition_id}/', 'Admin\AdminEntriesController@index');
 Route::get('admin/entries/{competition}/{entry}', 'Admin\AdminEntriesController@show');
-Route::patch('admin/entries/{competition}/{entry}', 'Admin\AdminEntriesController@update');
+Route::patch('admin/entries/{competition}/{entry}', 'Admin\AdminEntriesController@update')->middleware('can:update,entry');
