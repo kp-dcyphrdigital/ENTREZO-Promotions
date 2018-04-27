@@ -14,7 +14,7 @@
             <div class="card">
                 <div class="card-header">Total Entries</div>
                 <div class="card-body">
-                    <a href="/admin/entries/1">{{ $entriescounts['alltime'] }}</a>
+                    <a href="/admin/entries/1">{{ $entriescounts['alltime'] }}</a> <a href="/admin/entries/1/?approved=0">({{ $entriescounts['unapproved'] }})</a>
                 </div>
             </div>
             <div class="card">

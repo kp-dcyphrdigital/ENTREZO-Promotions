@@ -27,6 +27,8 @@ Route::post('admin/password/email', 'Auth\ForgotPasswordController@sendResetLink
 Route::get('admin/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('admin/password/reset', 'Auth\ResetPasswordController@reset');
 
-Route::get('admin/home', 'Admin\AdminEntriesController@index')->name('home');
+Route::get('admin/home', 'Admin\AdminEntriesController@dashboard')->name('home');
 
-Route::get('admin/entries/{competition_id}/', 'Admin\AdminEntriesController@list');
+Route::get('admin/entries/{competition_id}/', 'Admin\AdminEntriesController@index');
+Route::get('admin/entries/{competition}/{entry}', 'Admin\AdminEntriesController@show');
+Route::patch('admin/entries/{competition}/{entry}', 'Admin\AdminEntriesController@update');

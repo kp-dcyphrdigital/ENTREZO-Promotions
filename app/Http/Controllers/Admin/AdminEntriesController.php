@@ -23,19 +23,29 @@ class AdminEntriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Entry $entry)
+    public function dashboard(Entry $entry)
     {
         $entriescounts = $entry->getDashboardCounts();
         return view( 'admin.dashboard', compact('entriescounts') );
     }
 
-    public function list()
+    public function index()
     {
         $entries = Entry::latest()
             ->where('competition_id', '=', 1)
-            ->filter(request(['s']))
+            ->filter(request(['approved', 's']))
             ->paginate(20);
-        return view( 'admin.entries', compact('entries') );
+        return view( 'admin.entries.index', compact('entries') );
+    }
+    public function show($competition, Entry $entry)
+    {
+        session()->flash( 'backUrl', url()->previous() );
+        return view( 'admin.entries.show', compact('entry') );
     }
 
+    public function update($competition, Entry $entry)
+    {
+        $entry->update(['approved' => !$entry->approved]);
+        return redirect( session()->get('backUrl') );
+    }
 }

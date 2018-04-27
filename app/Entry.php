@@ -33,6 +33,8 @@ class Entry extends Model
 
     public function getDashboardCounts($competition = 1)
     {
+            $entriescounts['unapproved'] = $this->where('competition_id', '=', $competition)->where('approved', '=', 0)->count();
+
             $entriescounts['today'] = $this->where('competition_id', '=', $competition)->where('created_at', '>', Carbon::today())->count();
 
             $entriescounts['yesterday'] = Cache::remember('archives', 60, function() use ($competition) { 
@@ -47,6 +49,11 @@ class Entry extends Model
 
     public function scopeFilter($query, $filters)
     {
+
+        if ( @$filters['approved'] === "0" ) {
+            $query->where( 'approved', '=', 0 );
+        }
+
         if ( @$filters['s'] == 'today') {
             $query->where( 'created_at', '>', Carbon::today() );
         }
@@ -54,6 +61,7 @@ class Entry extends Model
         if ( @$filters['s'] == 'yesterday') {
             $query->whereBetween( 'created_at', [ Carbon::yesterday(), Carbon::today() ] );
         }
+
     }
 
 }
