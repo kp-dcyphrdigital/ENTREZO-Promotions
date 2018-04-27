@@ -16,7 +16,6 @@ class AdminEntriesController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->competition = config('app.entrezo_curr_comp_id');
     }
 
     /**
@@ -26,14 +25,13 @@ class AdminEntriesController extends Controller
      */
     public function dashboard(Entry $entry)
     {
-        $entriescounts = $entry->getDashboardCounts($this->competition);
+        $entriescounts = $entry->getDashboardCounts();
         return view( 'admin.dashboard', compact('entriescounts') );
     }
 
     public function index()
     {
         $entries = Entry::latest()
-            ->where('competition_id', '=', $this->competition)
             ->filter(request(['approved', 's']))
             ->paginate(20);
         return view( 'admin.entries.index', compact('entries') );

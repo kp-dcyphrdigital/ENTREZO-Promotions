@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Cache;
 use Carbon\Carbon;
 
@@ -10,6 +11,20 @@ class Entry extends Model
 {
     protected $guarded = [];
     protected $entriescounts;
+
+    /**
+     * The "booting" method of the model.
+     *
+     * @return void
+     */
+    protected static function boot()
+    {
+        parent::boot();
+        static::addGlobalScope('competition', function (Builder $builder) {
+            $competition = config('app.entrezo_curr_comp_id');
+            $builder->where('competition_id', '=', $competition);
+        });
+    }
 
     public function competition()
     {
@@ -31,17 +46,15 @@ class Entry extends Model
     	]);
     }
 
-    public function getDashboardCounts($competition)
+    public function getDashboardCounts()
     {
-            $entriescounts['unapproved'] = $this->where('competition_id', '=', $competition)->where('approved', '=', 0)->count();
+            $entriescounts['unapproved'] = $this->where('approved', '=', 0)->count();
+            $entriescounts['alltime'] = $this->count();
+            $entriescounts['today'] = $this->where('created_at', '>', Carbon::today())->count();
 
-            $entriescounts['today'] = $this->where('competition_id', '=', $competition)->where('created_at', '>', Carbon::today())->count();
-
-            $entriescounts['yesterday'] = Cache::remember('archives', 60, function() use ($competition) { 
-                return $this->where('competition_id', '=', $competition)->whereBetween( 'created_at', [ Carbon::yesterday(), Carbon::today() ] )->count();
+            $entriescounts['yesterday'] = Cache::remember('archives', 60, function() { 
+                return $this->whereBetween( 'created_at', [ Carbon::yesterday(), Carbon::today() ] )->count();
             });
-            
-            $entriescounts['alltime'] = $this->where('competition_id', '=', $competition)->count();
 
             return $entriescounts;
 
